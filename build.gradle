@@ -1,0 +1,41 @@
+version = '1.0'
+description = 'SwitchPairs'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'application'
+
+mainClassName = "SwitchPairs"
+
+repositories {
+	mavenCentral()
+
+}
+
+dependencies {
+	testCompile 'junit:junit:4.11'
+}
+
+
+// set path of the src path
+// contain 3 tasks: compileJava, processResources, classes
+sourceSets {
+	main {
+		java {  // the file set of Java code 
+			srcDir 'src'	
+		}
+	}
+}
+
+testClasses.dependsOn classes
+// set path of the test code
+// contain 3 tasks: compileTestJava, processTestResources, testClasses
+sourceSets {
+	test {
+		java {
+			srcDir 'spec'
+		}
+	}
+}
+
+
