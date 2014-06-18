@@ -1,0 +1,1 @@
+method 'randomSetGenerator' use LinkedHashSet and recirsive to generate a duplicate random set.
